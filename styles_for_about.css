@@ -1,0 +1,47 @@
+body {
+    background-image: url("https://www.cafeappliances.com/content/virtual-kitchen-backgrounds/Desert-Daydream-background.jpg");
+    background-size: cover;
+    padding-top: 70px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    font-family: 'Brush Script MT', cursive;
+}
+
+#introduction {
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    margin: 20px auto; 
+    width: 80%;
+    max-width: 400px; 
+}
+
+.container.my-5 {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 50vh;
+    
+}
+
+.container .row {
+    margin: 0 auto;
+}   
+
+h2.text-center{
+    color:white;
+}
+
+footer{
+    margin-top: auto;
+    padding: 10px 0;
+}
+
+
+
