@@ -1,6 +1,36 @@
-.hero {
-    background-image: url('/backgroundImage.jpg');
-    background-size: cover;   /* Ensure the image covers the entire section */
-    background-position: center; /* Center the image */
-    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+ /* Custom Styles */
+ .hero {
+    background-image: url('/backgroundImage.jpg'); /* Replace with your own image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+.hero p {
+    font-size: 1.25rem;
+}
+.btn-green {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.btn-green:hover {
+    background-color: #218838;
+}
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
 }
