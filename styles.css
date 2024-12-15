@@ -1,0 +1,6 @@
+.hero {
+    background-image: url('/backgroundImage.jpg');
+    background-size: cover;   /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+}
