@@ -3,6 +3,7 @@
     background-image: url('/backgroundImage.jpg'); 
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* This keeps the background image fixed while scrolling */
     height: 100vh;
     color: white;
     text-align: center;
@@ -40,6 +41,8 @@
     padding: 80px 0;
     position: relative;
     box-shadow: 0 -50px 50px rgba(0,0,0,0.1);
+    margin-top: -40px; /* This makes the white section overlap the hero section */
+    z-index: 1; /* This ensures the white section appears above the hero */
 }
 
 .content-card {
