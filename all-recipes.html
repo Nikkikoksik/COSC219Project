@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes - Cooking at Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .filters-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            position: sticky;
+            top: 20px;
+        }
+
+        .filter-group {
+            margin-bottom: 20px;
+        }
+
+        .filter-group h4 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .recipe-list-card {
+            display: flex;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .recipe-list-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .recipe-list-image {
+            width: 300px;
+            object-fit: cover;
+        }
+
+        .recipe-list-content {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .recipe-tags {
+            margin: 10px 0;
+        }
+
+        .recipe-tag {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #f0f0f0;
+            border-radius: 15px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .recipe-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .recipe-meta span {
+            margin-right: 20px;
+        }
+
+        .custom-control-input:checked ~ .custom-control-label::before {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Cooking at Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="discover-recipes.html">Discover</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-dark" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row">
+            <!-- Filters Sidebar -->
+            <div class="col-md-3">
+                <div class="filters-section">
+                    <h3 class="mb-4">Filters</h3>
+                    
+                    <!-- Meal Type -->
+                    <div class="filter-group">
+                        <h4>Meal Type</h4>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="breakfast">
+                            <label class="custom-control-label" for="breakfast">Breakfast</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="lunch">
+                            <label class="custom-control-label" for="lunch">Lunch</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="dinner">
+                            <label class="custom-control-label" for="dinner">Dinner</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="dessert">
+                            <label class="custom-control-label" for="dessert">Dessert</label>
+                        </div>
+                    </div>
+
+                    <!-- Cuisine -->
+                    <div class="filter-group">
+                        <h4>Cuisine</h4>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="italian">
+                            <label class="custom-control-label" for="italian">Italian</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="asian">
+                            <label class="custom-control-label" for="asian">Asian</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="mexican">
+                            <label class="custom-control-label" for="mexican">Mexican</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="european">
+                            <label class="custom-control-label" for="European">European</label>
+                        </div>
+                    </div>
+
+                    <!-- Dietary -->
+                    <div class="filter-group">
+                        <h4>Dietary</h4>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="vegetarian">
+                            <label class="custom-control-label" for="vegetarian">Vegetarian</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="vegan">
+                            <label class="custom-control-label" for="vegan">Vegan</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="glutenFree">
+                            <label class="custom-control-label" for="glutenFree">Gluten Free</label>
+                        </div>
+                    </div>
+
+                    <!-- Cooking Time -->
+                    <div class="filter-group">
+                        <h4>Cooking Time</h4>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="quick">
+                            <label class="custom-control-label" for="quick">Under 30 mins</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="medium">
+                            <label class="custom-control-label" for="medium">30-60 mins</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="long">
+                            <label class="custom-control-label" for="long">Over 60 mins</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe Cards -->
+            <div class="col-md-9">
+                <!-- Recipe Card Pizza -->
+                <div class="recipe-list-card"
+                data-meal-type="dinner" 
+                data-cuisine="italian" 
+                data-dietary="vegetarian" 
+                data-time="30">
+                    <img src="/italianPizza.jpg" alt="Recipe" class="recipe-list-image">
+                    <div class="recipe-list-content">
+                        <h3>Homemade Italian Pasta</h3>
+                        <div class="recipe-meta">
+                            <span><i class="far fa-clock"></i> 30 mins</span>
+                            <span><i class="fas fa-user-friends"></i> Serves 4</span>
+                            <span><i class="fas fa-fire"></i> 450 cal</span>
+                        </div>
+                        <p>Classic homemade pasta with rich tomato sauce, fresh basil, and Parmesan cheese. A true Italian comfort food that's perfect for family dinners.</p>
+                        <div class="recipe-tags">
+                            <span class="recipe-tag">#Italian</span>
+                            <span class="recipe-tag">#Pasta</span>
+                            <span class="recipe-tag">#Dinner</span>
+                            <span class="recipe-tag">#Vegetarian</span>
+                        </div>
+                        <a href="#" class="btn-green">View Full Recipe</a>
+                    </div>
+                </div>
+
+         
+                 <!-- Recipe Card Waffle Sandwich -->
+                <div class="recipe-list-card"
+                data-meal-type="breakfast" 
+                data-cuisine="Belgium" 
+                data-dietary=" " 
+                data-time="10">
+                    <img src="/recipePictures/waffleSandwitch.jpg" alt="Recipe" class="recipe-list-image">
+                    <div class="recipe-list-content">
+                        <h3>Waffle Sandwich</h3>
+                        <div class="recipe-meta">
+                            <span><i class="far fa-clock"></i> 10 mins</span>
+                            <span><i class="fas fa-user-friends"></i> Serves 2</span>
+                            <span><i class="fas fa-fire"></i> 200 cal</span>
+                        </div>
+                        <p>Breakfast for lunch or dinner? It’s a definite yes when the recipe’s this easy! For an extra crunch and protein, add pistachios or almonds.
+                            I like to serve this easy breakfast recipe with some crisp, juicy sweet apples. Sometimes, I add raisins and nuts
+                            to the filling of the waffle sandwich for sweetness and crunch.</p>
+                        <div class="recipe-tags">
+                            <span class="recipe-tag">#Egg</span>
+                            <span class="recipe-tag">#Bacon</span>
+                            <span class="recipe-tag">#Cheese</span>
+                            <span class="recipe-tag">#Sandwitch</span>
+                        </div>
+                        <a href="#" class="btn-green">View Full Recipe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Cooking at Home. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
+</html>
