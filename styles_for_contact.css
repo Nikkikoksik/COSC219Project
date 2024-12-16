@@ -1,0 +1,21 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url("https://i.pinimg.com/originals/82/2f/41/822f4126e127290ed75006b5c76c050a.jpg");
+}
+
+.form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-width: 500px;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+footer {
+    margin-top: auto;
+}
