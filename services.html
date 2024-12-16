@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles_for_services.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Cooking at Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-dark" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Skip The Cooking!</h1>
+        <form id="foodForm">
+            <div class="form-group">
+                <label for="foodSelection">Select Food Items:</label>
+                <div id="foodItems" class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Pizza Margherita</h5>
+                                <p class="card-text">pizza with tomatoes and cheese.</p>
+                                <p class="card-text"><strong>Price:</strong>15$</p>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="food-1" name="food" value="Margherita Pizza">
+                                    <label class="form-check-label" for="food-1">Add to order</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Caesar</h5>
+                                <p class="card-text">letuce,chicken,tomatoes,parmesan</p>
+                                <p class="card-text"><strong>Price:</strong>9$</p>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="food-2" name="food" value="Caesar Salad">
+                                    <label class="form-check-label" for="food-2">Add to order</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Spaghetti Carbonara</h5>
+                                <p class="card-text">italian pasta,cheese,and pancetta.</p>
+                                <p class="card-text"><strong>Price:</strong>15$</p>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="food-3" name="food" value="Spaghetti Carbonara">
+                                    <label class="form-check-label" for="food-3">Add to order</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Delivery Address:</label>
+                <input type="text" class="form-control" id="address" placeholder="Enter your delivery address" required>
+            </div>
+            <div class="form-group">
+                <label for="paymentMethod">Select Payment Method:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="creditCard" required>
+                    <label class="form-check-label" for="creditCard">Credit/Debit Card</label><br>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="googlePay" value="googlePay" required>
+                    <label class="form-check-label" for="googlePay">Google Pay</label><br>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="applePay" value="applePay" required>
+                    <label class="form-check-label" for="applePay">Apple Pay</label><br>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Place Order</button>
+        </form>
+    </div>
+    <br>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Cooking at Home. All Rights Reserved.</p>
+    </footer>
+    </script>
+</body>
+</html>

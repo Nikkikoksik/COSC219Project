@@ -1,0 +1,16 @@
+body {
+    background-image: url("https://en.idei.club/uploads/posts/2023-06/1685620447_en-idei-club-p-white-wood-table-dizain-6.jpg");
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    flex: 1;
+}
+footer {
+    background-color: #343a40; /* Dark background */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
