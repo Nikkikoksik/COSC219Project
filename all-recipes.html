@@ -83,7 +83,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#">Cooking at Home</a>
+            <a class="navbar-brand" href="index.html">Cooking at Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -154,7 +154,7 @@
                         </div>
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="european">
-                            <label class="custom-control-label" for="European">European</label>
+                            <label class="custom-control-label" for="european">European</label>
                         </div>
                     </div>
 
@@ -218,6 +218,7 @@
                             <span class="recipe-tag">#Vegetarian</span>
                         </div>
                         <a href="#" class="btn-green">View Full Recipe</a>
+                        <a href="#" class="btn-order">Order Now</a>
                     </div>
                 </div>
 
@@ -225,8 +226,8 @@
                  <!-- Recipe Card Waffle Sandwich -->
                 <div class="recipe-list-card"
                 data-meal-type="breakfast" 
-                data-cuisine="Belgium" 
-                data-dietary=" " 
+                data-cuisine="european" 
+                data-dietary="none" 
                 data-time="10">
                     <img src="/recipePictures/waffleSandwitch.jpg" alt="Recipe" class="recipe-list-image">
                     <div class="recipe-list-content">
@@ -249,6 +250,9 @@
                     </div>
                 </div>
             </div>
+            <div class="filter-buttons">
+                <button id="clear-filters" class="btn btn-outline-secondary w-100">Clear All Filters</button>
+            </div>
         </div>
     </div>
 
@@ -261,6 +265,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="recipeFilter.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </body>
 </html>

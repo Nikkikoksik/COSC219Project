@@ -53,6 +53,27 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+/* Ordering button */
+
+.btn-order {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.btn-order:hover {
+    background-color: #c82333;
+    color: white;
+    text-decoration: none;
+}
+
 
 /* This is for discover recipes */
 
@@ -114,9 +135,28 @@
         .discover-header {
             text-align: center;
             padding: 50px 0;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/kurnyk-844465-1775043.jpg');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/almond-3756523.jpg');
             background-size: cover;
             background-position: center;
             color: white;
             margin-bottom: 30px;
         }
+
+        /* Filter Buttons */
+
+        .filter-buttons {
+            margin-top: 30px;
+        }
+        
+        .filter-buttons button {
+            padding: 10px;
+        }
+        
+        .filter-buttons button:first-child {
+            margin-bottom: 10px;
+        }
+
+        .recipe-list-card.hidden {
+            display: none !important;
+        }
+

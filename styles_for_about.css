@@ -6,13 +6,10 @@ body {
     flex-direction: column;
 }
 
-* {
-    font-family: 'Brush Script MT', cursive;
-}
-
 #introduction {
     color: white;
     text-align: center;
+    font-family: 'Brush Script MT', cursive;
     font-size: 28px;
     margin: 20px auto; 
     width: 80%;
@@ -31,14 +28,15 @@ body {
 
 
 
-
 h2.text-center{
     color:white;
+    font-family: 'Brush Script MT', cursive;
 }
 
 footer{
     margin-top: auto;
     padding: 10px 0;
+    
 }
 
 
