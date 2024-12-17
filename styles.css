@@ -75,16 +75,16 @@
     color: white;
     text-decoration: none;
 }
-
+/* Discover-recipes styling: */
 
 .tag-cloud {
     padding: 50px 0;
     min-height: 60vh;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /*Centers text horizontally */
     align-items: center;
-    gap: 20px;
+    gap: 20px; /* Spaces between tags */
 }
 
 .tag {
@@ -103,6 +103,7 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* When hovering over a tag, it lifts up slightly */
 .tag a {
     color: #333;
     text-decoration: none;
@@ -121,6 +122,7 @@
     animation-delay: -6s;
 }
 
+/*Makes tags float up and down */
 @keyframes float {
     0% {
         transform: translateY(0px);

@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Get all checkboxes and recipe cards
-    // DOMContentLoaded event, works only when the initial HTML document has been fully loaded
     const filterCheckboxes = document.querySelectorAll('.filters-section input[type="checkbox"]');
     const recipeCards = document.querySelectorAll('.recipe-list-card');
     const applyButton = document.getElementById('apply-filters');
@@ -8,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // Map checkbox IDs to their filter categories
-    // Ex: breakfast and lunch belong in the mealType category
     const filterCategories = {
         breakfast: 'mealType',
         lunch: 'mealType',
@@ -35,6 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
         time: []
     };
     
+     // Check URL for tag parameter
+     const urlParams = new URLSearchParams(window.location.search);
+     const tagFromURL = urlParams.get('tag');
  
      // If there's a tag in the URL, find and check the corresponding checkbox
      if (tagFromURL) {
@@ -52,8 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function filterRecipes() {
         recipeCards.forEach(card => {
-            // Start by assuming we'll show the card
-            let shouldShow = true; 
+            // Default to showing all cards when no filters are active
+            let shouldShow = true;
 
             // Get card data and convert to lowercase for consistent comparison
             const cardMealType = card.dataset.mealType.toLowerCase();
@@ -61,10 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const cardDietary = card.dataset.dietary.toLowerCase();
             const cardTime = parseInt(card.dataset.time);
 
-           // If there are meal type filters selected (like breakfast, lunch, dinner)
+            // If there are meal type filters active, check if the card matches
             if (activeFilters.mealType.length > 0) {
                 if (!activeFilters.mealType.includes(cardMealType)) {
-                    shouldShow = false; // Hide if it doesn't match the meal type
+                    shouldShow = false;
                 }
             }
 
@@ -105,13 +106,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // For when the user clicks the checkboxes:
+    // Add click event listener to checkboxes
     filterCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() { 
+        checkbox.addEventListener('change', function() {
             const category = filterCategories[this.id];
             
             if (this.checked) {
-                activeFilters[category].push(this.id); // Finds which category the checkbox belongs to and adds that filter to the active filters list
+                activeFilters[category].push(this.id);
             } else {
                 activeFilters[category] = activeFilters[category]
                     .filter(filter => filter !== this.id);
@@ -141,57 +142,3 @@ document.addEventListener('DOMContentLoaded', function() {
         filterRecipes();
     });
 });
-
-/*
-Initial Setup
-
-Waits for the page to fully load
-Gets all checkboxes and recipe cards
-Creates a mapping of which checkbox belongs to which category (meal type, cuisine, etc.)
-Sets up empty arrays to track active filters
-
-
-URL Parameter Check (optional feature)
-
-Checks if URL has any filter tags (like ?tag=italian)
-If found, automatically applies that filter
-
-
-Main Filter Function
-
-Starts by assuming all recipes should be shown
-Checks each recipe card against selected filters:
-
-Meal Type (breakfast, lunch, dinner)
-Cuisine (Italian, Asian, etc.)
-Dietary restrictions (vegetarian, vegan)
-Time requirements (quick, medium, long)
-
-
-Hides recipes that don't match ALL selected filters
-Shows recipes that match everything
-
-
-Checkbox Event Handling
-
-Watches for when users click checkboxes
-When checked: adds that filter to active list
-When unchecked: removes that filter
-Immediately updates which recipes are shown
-
-
-Clear Filter Button
-
-When clicked, unchecks all checkboxes
-Resets all filter arrays to empty
-Shows all recipes again
-
-
-
-Think of it like a smart recipe organizer:
-
-You select what you want (vegetarian + quick + Italian)
-It instantly hides everything that doesn't match
-You can easily clear all filters to start over
-You can share specific filtered views with friends (via URL)
-*/
