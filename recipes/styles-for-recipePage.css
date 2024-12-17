@@ -1,5 +1,4 @@
 .recipe-header {
-    background-color: #f8f9fa;
     padding: 2rem 0;
     margin-bottom: 2rem;
 }
@@ -22,7 +21,6 @@
 }
 
 .ingredients-list {
-    background-color: #f8f9fa;
     padding: 2rem;
     border-radius: 8px;
     margin-bottom: 2rem;
@@ -39,7 +37,6 @@
 }
 
 .nutritional-info {
-    background-color: #f8f9fa;
     padding: 1.5rem;
     border-radius: 8px;
     margin-top: 2rem;
