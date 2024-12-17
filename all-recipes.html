@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="styles-allRecipes.css">
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="index.html">Cooking at Home</a>
@@ -40,12 +39,9 @@
 
     <div class="container py-5">
         <div class="row">
-            <!-- Filters Sidebar -->
             <div class="col-md-3">
                 <div class="filters-section">
                     <h3 class="mb-4">Filters</h3>
-                    
-                    <!-- Meal Type -->
                     <div class="filter-group">
                         <h4>Meal Type</h4>
                         <div class="custom-control custom-checkbox">
@@ -65,8 +61,6 @@
                             <label class="custom-control-label" for="dessert">Dessert</label>
                         </div>
                     </div>
-
-                    <!-- Cuisine -->
                     <div class="filter-group">
                         <h4>Cuisine</h4>
                         <div class="custom-control custom-checkbox">
@@ -86,8 +80,6 @@
                             <label class="custom-control-label" for="european">European</label>
                         </div>
                     </div>
-
-                    <!-- Dietary -->
                     <div class="filter-group">
                         <h4>Dietary</h4>
                         <div class="custom-control custom-checkbox">
@@ -103,19 +95,13 @@
                             <label class="custom-control-label" for="glutenfree">Gluten Free</label>
                         </div>
                     </div>
-
-                    <!-- Cooking Time -->
-
                     <div class="filter-buttons">
                         <button id="clear-filters" class="btn btn-outline-secondary w-100">Clear All Filters</button>
                     </div>
                     
                 </div>
             </div>
-
-            <!-- Recipe Cards -->
             <div class="col-md-9">
-                <!-- Recipe Card Pizza -->
                 <div class="recipe-list-card" 
                 data-meal-type="dinner" 
                 data-cuisine="italian" 
@@ -140,9 +126,6 @@
                         <a href="services.html" class="btn-order">Order Now</a>
                     </div>
                 </div>
-
-         
-                 <!-- Recipe Card Waffle Sandwich -->
                 <div class="recipe-list-card"
                 data-meal-type="breakfast" 
                 data-cuisine="european" 
@@ -169,8 +152,6 @@
                         <a href="services.html" class="btn-order">Order Now</a>
                     </div>
                 </div>
-
-                  <!-- Recipe Card Salmon Dish -->
                   <div class="recipe-list-card"
                   data-meal-type="lunch" 
                   data-cuisine="none" 
@@ -197,9 +178,6 @@
                           <a href="services.html" class="btn-order">Order Now</a>
                       </div>
                   </div>
-
-
-                   <!-- Recipe Card Pancakes -->
                    <div class="recipe-list-card"
                    data-meal-type="Dessert" 
                    data-cuisine="none" 
@@ -226,9 +204,6 @@
                            <a href="services.html" class="btn-order">Order Now</a>
                        </div>
                    </div>
-
-
-                    <!-- Recipe Card Chicken Tacos -->
                     <div class="recipe-list-card"
                     data-meal-type="Dinner" 
                     data-cuisine="Mexican" 
@@ -256,9 +231,6 @@
                             <a href="services.html" class="btn-order">Order Now</a>
                         </div>
                     </div>
-
-
-                    <!-- Recipe Card Sushi -->
                     <div class="recipe-list-card"
                     data-meal-type="Dinner" 
                     data-cuisine="Asian" 
@@ -285,9 +257,6 @@
                             <a href="services.html" class="btn-order">Order Now</a>
                         </div>
                     </div>
-
-
-                    <!-- Recipe Card Lemon Basil Creamy Pasta -->
                     <div class="recipe-list-card"
                     data-meal-type="Lunch" 
                     data-cuisine="Italian" 
@@ -314,8 +283,6 @@
                             <a href="services.html" class="btn-order">Order Now</a>
                         </div>
                     </div>
-
-                    <!-- Recipe Card Gluten Free Meatballs -->
                     <div class="recipe-list-card"
                     data-meal-type="Dinner" 
                     data-cuisine="European" 
@@ -342,25 +309,16 @@
                             <a href="services.html" class="btn-order">Order Now</a>
                         </div>
                     </div>
-  
-  
- 
-
-
-          
             </div>
         </div>
     </div>
     
 
-    <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 Cooking at Home. All Rights Reserved.</p>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="recipeFilter.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
