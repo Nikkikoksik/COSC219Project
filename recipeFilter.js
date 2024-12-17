@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         european: 'cuisine',
         vegetarian: 'dietary',
         vegan: 'dietary',
-        glutenFree: 'dietary',
+        glutenfree: 'dietary',
         quick: 'time',
         medium: 'time',
         long: 'time'

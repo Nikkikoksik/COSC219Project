@@ -6,78 +6,7 @@
     <title>Recipes - Cooking at Home</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .filters-section {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            position: sticky;
-            top: 20px;
-        }
-
-        .filter-group {
-            margin-bottom: 20px;
-        }
-
-        .filter-group h4 {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        .recipe-list-card {
-            display: flex;
-            margin-bottom: 30px;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .recipe-list-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .recipe-list-image {
-            width: 300px;
-            object-fit: cover;
-        }
-
-        .recipe-list-content {
-            padding: 20px;
-            flex: 1;
-        }
-
-        .recipe-tags {
-            margin: 10px 0;
-        }
-
-        .recipe-tag {
-            display: inline-block;
-            padding: 5px 10px;
-            background: #f0f0f0;
-            border-radius: 15px;
-            margin-right: 5px;
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .recipe-meta {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-
-        .recipe-meta span {
-            margin-right: 20px;
-        }
-
-        .custom-control-input:checked ~ .custom-control-label::before {
-            background-color: #28a745;
-            border-color: #28a745;
-        }
-    </style>
+    <link rel="stylesheet" href="styles-allRecipes.css">
 </head>
 <body>
     <!-- Navbar -->
@@ -99,10 +28,10 @@
                         <a class="nav-link" href="discover-recipes.html">Discover</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Gallery</a>
+                        <a class="nav-link" href="services.html">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-outline-dark" href="#">Contact</a>
+                        <a class="btn btn-outline-dark" href="contact.html">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -170,41 +99,31 @@
                             <label class="custom-control-label" for="vegan">Vegan</label>
                         </div>
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="glutenFree">
-                            <label class="custom-control-label" for="glutenFree">Gluten Free</label>
+                            <input type="checkbox" class="custom-control-input" id="glutenfree">
+                            <label class="custom-control-label" for="glutenfree">Gluten Free</label>
                         </div>
                     </div>
 
                     <!-- Cooking Time -->
-                    <div class="filter-group">
-                        <h4>Cooking Time</h4>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="quick">
-                            <label class="custom-control-label" for="quick">Under 30 mins</label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="medium">
-                            <label class="custom-control-label" for="medium">30-60 mins</label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="long">
-                            <label class="custom-control-label" for="long">Over 60 mins</label>
-                        </div>
+
+                    <div class="filter-buttons">
+                        <button id="clear-filters" class="btn btn-outline-secondary w-100">Clear All Filters</button>
                     </div>
+                    
                 </div>
             </div>
 
             <!-- Recipe Cards -->
             <div class="col-md-9">
                 <!-- Recipe Card Pizza -->
-                <div class="recipe-list-card"
+                <div class="recipe-list-card" 
                 data-meal-type="dinner" 
                 data-cuisine="italian" 
                 data-dietary="vegetarian" 
                 data-time="30">
-                    <img src="/italianPizza.jpg" alt="Recipe" class="recipe-list-image">
+                    <img src="/recipePictures/italianPizza.jpg" alt="Recipe" class="recipe-list-image">
                     <div class="recipe-list-content">
-                        <h3>Homemade Italian Pasta</h3>
+                        <h3>Homemade Italian Pizza</h3>
                         <div class="recipe-meta">
                             <span><i class="far fa-clock"></i> 30 mins</span>
                             <span><i class="fas fa-user-friends"></i> Serves 4</span>
@@ -217,8 +136,8 @@
                             <span class="recipe-tag">#Dinner</span>
                             <span class="recipe-tag">#Vegetarian</span>
                         </div>
-                        <a href="#" class="btn-green">View Full Recipe</a>
-                        <a href="#" class="btn-order">Order Now</a>
+                        <a href="recipes/recipes-italian-pizza.html" target="_blank" class="btn-green">View Full Recipe</a>
+                        <a href="services.html" class="btn-order">Order Now</a>
                     </div>
                 </div>
 
@@ -246,15 +165,193 @@
                             <span class="recipe-tag">#Cheese</span>
                             <span class="recipe-tag">#Sandwitch</span>
                         </div>
-                        <a href="#" class="btn-green">View Full Recipe</a>
+                        <a href="recipes/recipes-waffle-sandwitch.html" target="_blank" class="btn-green">View Full Recipe</a>
+                        <a href="services.html" class="btn-order">Order Now</a>
                     </div>
                 </div>
-            </div>
-            <div class="filter-buttons">
-                <button id="clear-filters" class="btn btn-outline-secondary w-100">Clear All Filters</button>
+
+                  <!-- Recipe Card Salmon Dish -->
+                  <div class="recipe-list-card"
+                  data-meal-type="lunch" 
+                  data-cuisine="none" 
+                  data-dietary="none" 
+                  data-time="30">
+                      <img src="/recipePictures/salmon.jpg" alt="Recipe" class="recipe-list-image">
+                      <div class="recipe-list-content">
+                          <h3>Grilled Salmon</h3>
+                          <div class="recipe-meta">
+                              <span><i class="far fa-clock"></i> 30 mins</span>
+                              <span><i class="fas fa-user-friends"></i> Serves 2</span>
+                              <span><i class="fas fa-fire"></i> 468 cal</span>
+                          </div>
+                          <p>Looking for a simple yet flavorful way to enjoy salmon? This grilled salmon recipe is perfect for a quick weeknight 
+                            dinner or a weekend cookout. Infused with a blend of zesty spices and grilled to perfection, 
+                            the salmon develops a smoky char that enhances its natural richness. Whether paired with a crisp salad or roasted vegetables, 
+                            this dish is sure to impress your taste buds and dinner guests alike!</p>
+                          <div class="recipe-tags">
+                              <span class="recipe-tag">#Healthy</span>
+                              <span class="recipe-tag">#Seafood</span>
+                              <span class="recipe-tag">#Grilled</span>
+                          </div>
+                          <a href="#" class="btn-green">View Full Recipe</a>
+                          <a href="services.html" class="btn-order">Order Now</a>
+                      </div>
+                  </div>
+
+
+                   <!-- Recipe Card Pancakes -->
+                   <div class="recipe-list-card"
+                   data-meal-type="Dessert" 
+                   data-cuisine="none" 
+                   data-dietary="none" 
+                   data-time="25">
+                       <img src="/recipePictures/pancakes.jpg" alt="Recipe" class="recipe-list-image">
+                       <div class="recipe-list-content">
+                           <h3>Fluffy Pancakes</h3>
+                           <div class="recipe-meta">
+                               <span><i class="far fa-clock"></i> 25 mins</span>
+                               <span><i class="fas fa-user-friends"></i> Serves 12</span>
+                               <span><i class="fas fa-fire"></i> 300 cal</span>
+                           </div>
+                           <p>
+                            These fluffy baked pancakes are a game-changer for breakfast lovers! Soft, light, and perfectly golden, 
+                            they’re easy to make and ideal for feeding a crowd. Just bake, slice, 
+                            and enjoy a deliciously warm and comforting start to your day.</p>
+                           <div class="recipe-tags">
+                               <span class="recipe-tag">#Dessert</span>
+                               <span class="recipe-tag">#Baked</span>
+                               <span class="recipe-tag">#Breakfast</span>
+                           </div>
+                           <a href="#" class="btn-green">View Full Recipe</a>
+                           <a href="services.html" class="btn-order">Order Now</a>
+                       </div>
+                   </div>
+
+
+                    <!-- Recipe Card Chicken Tacos -->
+                    <div class="recipe-list-card"
+                    data-meal-type="Dinner" 
+                    data-cuisine="Mexican" 
+                    data-dietary="none" 
+                    data-time="35">
+                        <img src="/recipePictures/tacos.jpg" alt="Recipe" class="recipe-list-image">
+                        <div class="recipe-list-content">
+                            <h3>Chicken Tacos</h3>
+                            <div class="recipe-meta">
+                                <span><i class="far fa-clock"></i> 35 mins</span>
+                                <span><i class="fas fa-user-friends"></i> Serves 8</span>
+                                <span><i class="fas fa-fire"></i> 221 cal</span>
+                            </div>
+                            <p>
+                                Homemade tacos are the perfect way to bring flavor and fun to your table! 
+                                Packed with fresh ingredients and customizable fillings, they’re easy to make and 
+                                sure to please everyone. Tacos night just got even better!
+                            </p>
+                            <div class="recipe-tags">
+                                <span class="recipe-tag">#Mexican</span>
+                                <span class="recipe-tag">#Chicken</span>
+                                <span class="recipe-tag">#Dinner</span>
+                            </div>
+                            <a href="#" class="btn-green">View Full Recipe</a>
+                            <a href="services.html" class="btn-order">Order Now</a>
+                        </div>
+                    </div>
+
+
+                    <!-- Recipe Card Sushi -->
+                    <div class="recipe-list-card"
+                    data-meal-type="Dinner" 
+                    data-cuisine="Asian" 
+                    data-dietary="none" 
+                    data-time="35">
+                        <img src="/recipePictures/sushi.jpg" alt="Recipe" class="recipe-list-image">
+                        <div class="recipe-list-content">
+                            <h3>Sushi Rolls</h3>
+                            <div class="recipe-meta">
+                                <span><i class="far fa-clock"></i> 2-3 hours</span>
+                                <span><i class="fas fa-user-friends"></i> Serves 60</span>
+                                <span><i class="fas fa-fire"></i> 60-90 cal</span>
+                            </div>
+                            <p>
+                             These fluffy baked pancakes are a game-changer for breakfast lovers! Soft, light, and perfectly golden, 
+                             they’re easy to make and ideal for feeding a crowd. Just bake, slice, 
+                             and enjoy a deliciously warm and comforting start to your day.</p>
+                            <div class="recipe-tags">
+                                <span class="recipe-tag">#Asian</span>
+                                <span class="recipe-tag">#Mediterrarian</span>
+                                <span class="recipe-tag">#Dinner</span>
+                            </div>
+                            <a href="#" class="btn-green">View Full Recipe</a>
+                            <a href="services.html" class="btn-order">Order Now</a>
+                        </div>
+                    </div>
+
+
+                    <!-- Recipe Card Lemon Basil Creamy Pasta -->
+                    <div class="recipe-list-card"
+                    data-meal-type="Lunch" 
+                    data-cuisine="Italian" 
+                    data-dietary="Vegan" 
+                    data-time="30">
+                        <img src="/recipePictures/veganPasta.jpg" alt="Recipe" class="recipe-list-image">
+                        <div class="recipe-list-content">
+                            <h3>Lemon Basil Creamy Pasta</h3>
+                            <div class="recipe-meta">
+                                <span><i class="far fa-clock"></i> 30 minutes</span>
+                                <span><i class="fas fa-user-friends"></i> Serves 4</span>
+                                <span><i class="fas fa-fire"></i> 350 cal</span>
+                            </div>
+                            <p>This homemade Lemon Basil Creamy Pasta is a refreshing twist on comfort food! With its zesty lemon flavor, fresh basil, and a rich, 
+                                creamy sauce, it’s easy to make and perfect for a quick, satisfying meal. Bright, vibrant, and full of flavor, it’s sure to become a new favorite!
+                             </p>
+                            <div class="recipe-tags">
+                                <span class="recipe-tag">#Pasta</span>
+                                <span class="recipe-tag">#Vegan</span>
+                                <span class="recipe-tag">#Lunch</span>
+                                <span class="recipe-tag">#Healthy</span>
+                            </div>
+                            <a href="recipes/recipes-italian-pasta.html "target="_blank" class="btn-green">View Full Recipe</a>
+                            <a href="services.html" class="btn-order">Order Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Recipe Card Gluten Free Meatballs -->
+                    <div class="recipe-list-card"
+                    data-meal-type="Dinner" 
+                    data-cuisine="European" 
+                    data-dietary="glutenfree" 
+                    data-time="40">
+                        <img src="/recipePictures/glutenFreeMeatballs.jpg" alt="Recipe" class="recipe-list-image">
+                        <div class="recipe-list-content">
+                            <h3>Skillet Enchilada Meatballs</h3>
+                            <div class="recipe-meta">
+                                <span><i class="far fa-clock"></i> 40-60 minutes</span>
+                                <span><i class="fas fa-user-friends"></i> Serves 16</span>
+                                <span><i class="fas fa-fire"></i> 800 cal</span>
+                            </div>
+                            <p>These Skillet Enchilada Meatballs are a delicious fusion of bold flavors and hearty comfort. 
+                                Juicy meatballs simmered in a rich enchilada sauce make for an easy, satisfying meal. 
+                                Perfect for a weeknight dinner or a crowd-pleasing appetizer, they’re sure to be a hit!
+                             </p>
+                            <div class="recipe-tags">
+                                <span class="recipe-tag">#Beef</span>
+                                <span class="recipe-tag">#GlutenFree</span>
+                                <span class="recipe-tag">#Dinner</span>
+                            </div>
+                            <a href="#" class="btn-green">View Full Recipe</a>
+                            <a href="services.html" class="btn-order">Order Now</a>
+                        </div>
+                    </div>
+  
+  
+ 
+
+
+          
             </div>
         </div>
     </div>
+    
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
