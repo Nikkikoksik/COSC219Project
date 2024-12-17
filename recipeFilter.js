@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Get all checkboxes and recipe cards
+    // DOMContentLoaded event, works only when the initial HTML document has been fully loaded
     const filterCheckboxes = document.querySelectorAll('.filters-section input[type="checkbox"]');
     const recipeCards = document.querySelectorAll('.recipe-list-card');
     const applyButton = document.getElementById('apply-filters');
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // Map checkbox IDs to their filter categories
+    // Ex: breakfast and lunch belong in the mealType category
     const filterCategories = {
         breakfast: 'mealType',
         lunch: 'mealType',
@@ -33,9 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         time: []
     };
     
-     // Check URL for tag parameter
-     const urlParams = new URLSearchParams(window.location.search);
-     const tagFromURL = urlParams.get('tag');
  
      // If there's a tag in the URL, find and check the corresponding checkbox
      if (tagFromURL) {
@@ -53,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function filterRecipes() {
         recipeCards.forEach(card => {
-            // Default to showing all cards when no filters are active
-            let shouldShow = true;
+            // Start by assuming we'll show the card
+            let shouldShow = true; 
 
             // Get card data and convert to lowercase for consistent comparison
             const cardMealType = card.dataset.mealType.toLowerCase();
@@ -62,10 +61,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const cardDietary = card.dataset.dietary.toLowerCase();
             const cardTime = parseInt(card.dataset.time);
 
-            // If there are meal type filters active, check if the card matches
+           // If there are meal type filters selected (like breakfast, lunch, dinner)
             if (activeFilters.mealType.length > 0) {
                 if (!activeFilters.mealType.includes(cardMealType)) {
-                    shouldShow = false;
+                    shouldShow = false; // Hide if it doesn't match the meal type
                 }
             }
 
@@ -106,13 +105,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Add click event listener to checkboxes
+    // For when the user clicks the checkboxes:
     filterCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
+        checkbox.addEventListener('change', function() { 
             const category = filterCategories[this.id];
             
             if (this.checked) {
-                activeFilters[category].push(this.id);
+                activeFilters[category].push(this.id); // Finds which category the checkbox belongs to and adds that filter to the active filters list
             } else {
                 activeFilters[category] = activeFilters[category]
                     .filter(filter => filter !== this.id);
