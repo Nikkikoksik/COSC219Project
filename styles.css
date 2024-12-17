@@ -1,6 +1,6 @@
  /* Custom Styles */
  .hero {
-    background-image: url('/backgroundImage.jpg'); 
+    background-image: url('recipePictures/backgroundImage.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* This keeps the background image fixed while scrolling */
@@ -41,8 +41,8 @@
     padding: 80px 0;
     position: relative;
     box-shadow: 0 -50px 50px rgba(0,0,0,0.1);
-    margin-top: -40px; /* This makes the white section overlap the hero section */
-    z-index: 1; /* This ensures the white section appears above the hero */
+    margin-top: -40px;
+    z-index: 1;
 }
 
 .content-card {
@@ -52,8 +52,6 @@
     margin-bottom: 30px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
-
-/* Ordering button */
 
 .btn-order {
     background-color: #dc3545;
@@ -74,8 +72,6 @@
     text-decoration: none;
 }
 
-
-/* This is for discover recipes */
 
   .tag-cloud {
             padding: 50px 0;
@@ -135,7 +131,7 @@
         .discover-header {
             text-align: center;
             padding: 50px 0;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/almond-3756523.jpg');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('recipePictures/almond-3756523.jpg');
             background-size: cover;
             background-position: center;
             color: white;
