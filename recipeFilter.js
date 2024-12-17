@@ -141,3 +141,57 @@ document.addEventListener('DOMContentLoaded', function() {
         filterRecipes();
     });
 });
+
+/*
+Initial Setup
+
+Waits for the page to fully load
+Gets all checkboxes and recipe cards
+Creates a mapping of which checkbox belongs to which category (meal type, cuisine, etc.)
+Sets up empty arrays to track active filters
+
+
+URL Parameter Check (optional feature)
+
+Checks if URL has any filter tags (like ?tag=italian)
+If found, automatically applies that filter
+
+
+Main Filter Function
+
+Starts by assuming all recipes should be shown
+Checks each recipe card against selected filters:
+
+Meal Type (breakfast, lunch, dinner)
+Cuisine (Italian, Asian, etc.)
+Dietary restrictions (vegetarian, vegan)
+Time requirements (quick, medium, long)
+
+
+Hides recipes that don't match ALL selected filters
+Shows recipes that match everything
+
+
+Checkbox Event Handling
+
+Watches for when users click checkboxes
+When checked: adds that filter to active list
+When unchecked: removes that filter
+Immediately updates which recipes are shown
+
+
+Clear Filter Button
+
+When clicked, unchecks all checkboxes
+Resets all filter arrays to empty
+Shows all recipes again
+
+
+
+Think of it like a smart recipe organizer:
+
+You select what you want (vegetarian + quick + Italian)
+It instantly hides everything that doesn't match
+You can easily clear all filters to start over
+You can share specific filtered views with friends (via URL)
+*/
