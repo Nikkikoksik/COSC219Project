@@ -35,6 +35,7 @@
             </div>
         </div>
     </nav>
+
     <div class="container mt-5">
         <h1 class="text-center mb-4">Skip The Cooking!</h1>
         <form id="foodForm">
@@ -46,9 +47,9 @@
                             <div class="card-body">
                                 <h5 class="card-title">Pizza Margherita</h5>
                                 <p class="card-text">pizza with tomatoes and cheese.</p>
-                                <p class="card-text"><strong>Price:</strong>15$</p>
+                                <p class="card-text"><strong>Price:</strong> 15$</p>
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="food-1" name="food" value="Margherita Pizza">
+                                    <input type="checkbox" class="form-check-input" id="food-1" name="food" value="15">
                                     <label class="form-check-label" for="food-1">Add to order</label>
                                 </div>
                             </div>
@@ -58,10 +59,10 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Caesar</h5>
-                                <p class="card-text">letuce,chicken,tomatoes,parmesan</p>
-                                <p class="card-text"><strong>Price:</strong>9$</p>
+                                <p class="card-text">lettuce, chicken, tomatoes, parmesan</p>
+                                <p class="card-text"><strong>Price:</strong> 9$</p>
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="food-2" name="food" value="Caesar Salad">
+                                    <input type="checkbox" class="form-check-input" id="food-2" name="food" value="9">
                                     <label class="form-check-label" for="food-2">Add to order</label>
                                 </div>
                             </div>
@@ -71,10 +72,10 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Spaghetti Carbonara</h5>
-                                <p class="card-text">italian pasta,cheese,and pancetta.</p>
-                                <p class="card-text"><strong>Price:</strong>15$</p>
+                                <p class="card-text">Italian pasta, cheese, and pancetta.</p>
+                                <p class="card-text"><strong>Price:</strong> 15$</p>
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="food-3" name="food" value="Spaghetti Carbonara">
+                                    <input type="checkbox" class="form-check-input" id="food-3" name="food" value="15">
                                     <label class="form-check-label" for="food-3">Add to order</label>
                                 </div>
                             </div>
@@ -87,6 +88,13 @@
                 <label for="address">Delivery Address:</label>
                 <input type="text" class="form-control" id="address" placeholder="Enter your delivery address" required>
             </div>
+
+            <!-- Display total price -->
+            <div class="form-group" id="totalPriceContainer">
+                <label>Total Price: </label>
+                <p id="totalPrice">0$</p>
+            </div>
+
             <div class="form-group">
                 <label for="paymentMethod">Select Payment Method:</label>
                 <div class="form-check">
@@ -102,14 +110,18 @@
                     <label class="form-check-label" for="applePay">Apple Pay</label><br>
                 </div>
             </div>
+
             <button type="submit" class="btn btn-primary btn-block">Place Order</button>
         </form>
     </div>
+
     <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 Cooking at Home. All Rights Reserved.</p>
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script_for_services.js"></script>
 </body>
 </html>
