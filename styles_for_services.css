@@ -18,6 +18,41 @@ html, body {
     width: fit-content;
     margin-top: 10px;
 }
+
 #totalPrice {
     font-weight: bold;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.card {
+    height: 100%;
+}
+
+.card-body {
+    flex: 1; /* Make card body take up remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-text {
+    flex-grow: 1; /* Allow the description to grow and fill space */
+    overflow: hidden; /* Hide overflow text */
+    display: -webkit-box; /* Required for line clamping */
+    -webkit-line-clamp: 3; /* Limit to 3 lines of text */
+    -webkit-box-orient: vertical; /* Vertical orientation for line clamping */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+.card-title {
+    font-size: 1.25rem; /* Consistent title size */
+    margin-bottom: 0.5rem; /* Space below the title */
+}
+
+.card-text strong {
+    font-size: 1rem; /* Consistent price text size */
 }

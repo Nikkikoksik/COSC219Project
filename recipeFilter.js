@@ -1,12 +1,18 @@
+/*The code below does the following:
+1. Listens for the DOM to load (DOMContentLoaded even)
+2. Sets up event listeners for filter checkboxes and a "Clear Filters" button
+3. Filters recipe cards based on the selected filters   
+4. Handles URL parameters to apply filters when the page loads
+*/
 document.addEventListener('DOMContentLoaded', function() {
     // Get all checkboxes and recipe cards
-    const filterCheckboxes = document.querySelectorAll('.filters-section input[type="checkbox"]');
-    const recipeCards = document.querySelectorAll('.recipe-list-card');
-    const applyButton = document.getElementById('apply-filters');
-    const clearButton = document.getElementById('clear-filters');
+    const filterCheckboxes = document.querySelectorAll('.filters-section input[type="checkbox"]'); /* List of all filter checkboxes */
+    const recipeCards = document.querySelectorAll('.recipe-list-card');/* List of all recipe cards on the page */
+    const clearButton = document.getElementById('clear-filters'); /* Button for clearing filters*/
 
 
-    // Map checkbox IDs to their filter categories
+  
+    //A mapping of checkbox IDs to their respective filter categories (e.g., breakfast → mealType)
     const filterCategories = {
         breakfast: 'mealType',
         lunch: 'mealType',
@@ -25,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
 
-    // Store the current state of filters
+    // Store the currently active filters for each category (e.g., mealType: ['breakfast'])
     let activeFilters = {
         mealType: [],
         cuisine: [],
@@ -64,6 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // If there are meal type filters active, check if the card matches
             if (activeFilters.mealType.length > 0) {
+                // Convert actuveFilters.mealType to lowercase for comparison
+                const mealTypeFilters = activeFilters.mealType.map(filter => filter.toLowerCase);
                 if (!activeFilters.mealType.includes(cardMealType)) {
                     shouldShow = false;
                 }
@@ -79,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Only check dietary if the card hasn't already been hidden
             if (shouldShow && activeFilters.dietary.length > 0) {
                 // Special handling for 'none' dietary restriction
-                if (cardDietary === 'none' && cardDietary === 'none') {
+                if (cardDietary === 'none') {
                     shouldShow = false;
                 } else if (!activeFilters.dietary.includes(cardDietary)) {
                     shouldShow = false;
@@ -89,16 +97,14 @@ document.addEventListener('DOMContentLoaded', function() {
             // Only check time if the card hasn't already been hidden
             if (shouldShow && activeFilters.time.length > 0) {
                 const timeMatch = activeFilters.time.some(filter => {
-                    switch(filter) {
+                    switch (filter) {
                         case 'quick': return cardTime <= 30;
                         case 'medium': return cardTime > 30 && cardTime <= 60;
                         case 'long': return cardTime > 60;
                         default: return false;
                     }
                 });
-                if (!timeMatch) {
-                    shouldShow = false;
-                }
+                shouldShow = timeMatch; // Simplify the assignment
             }
 
             // Apply visibility

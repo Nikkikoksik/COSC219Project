@@ -5,6 +5,11 @@ body {
     background-image: url("https://i.pinimg.com/originals/82/2f/41/822f4126e127290ed75006b5c76c050a.jpg");
 }
 
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
 .form-container {
     background: white;
     padding: 30px;
